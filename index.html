@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gridstyles.css">
+    <title>DOM Manipulation</title>
+</head>
+
+<div class="header">
+    <center>
+        <h1>
+            The Movie Database
+        </h1>
+    </center>
+</div>
+
+<div id="demo" class="grid">
+
+</div>
+
+
+<script>
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+            movies = myObj.movies
+            var n = 0
+            while (movies[n]) {
+                movie = movies[n]
+                genre = movie.genres
+                document.getElementById("demo").innerHTML += `
+                    <div class="grid-item">
+                        <center><h2>${movie.title}</h2></center>
+                        <hr>
+                        <div class="grid-sub">
+                            <span class="content">${movie.year}</span>
+                            <span class="content">${movie.runtime} mins</span>
+                            <span class="content">${genre[0]}</span>
+                        </div>
+                        <div class="content">
+                            ${movie.plot}
+                        </div>
+                    </div>
+                `
+                n = n + 1
+            }
+        }
+    };
+    xmlhttp.open("GET", "movies.json", true);
+    xmlhttp.send();
+</script>
+
+<body>
+
+</body>
+
+</html>
