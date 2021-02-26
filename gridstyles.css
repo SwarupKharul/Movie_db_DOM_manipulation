@@ -22,19 +22,19 @@ html{
 .grid-item{
     background-color: rgb(53, 53, 53);
     padding: 2%;
-    height: 220px;
+    height: 250px;
     color: white;
     border: 3px solid #39003f;
     border-radius: 8px;
     padding: .5rem;
     box-shadow: 0 4px 8px 0 rgba(94, 94, 94, 0.2);
-    transition: height 1s;
+    transition: height 0.5s;
     
 }
 
 .grid-item:hover{
     background-color: rgb(39, 39, 39);
-    height: 230px;
+    height: 260px;
 }
 
 div.content {
