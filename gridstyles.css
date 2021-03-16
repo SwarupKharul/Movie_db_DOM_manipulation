@@ -22,7 +22,7 @@ html{
 .grid-item{
     background-color: rgb(53, 53, 53);
     padding: 2%;
-    height: 250px;
+    height: 400px;
     color: white;
     border: 3px solid #39003f;
     border-radius: 8px;
@@ -34,7 +34,7 @@ html{
 
 .grid-item:hover{
     background-color: rgb(39, 39, 39);
-    height: 260px;
+    height: 410px;
 }
 
 div.content {
